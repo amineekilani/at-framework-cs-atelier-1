@@ -28,12 +28,12 @@ final class BlogController extends AbstractController
     {
         return $this->render("blog/detail.html.twig", ["id"=>$id, "name"=>$name]);
     }
-    #[Route("/blog/test", name: "blog_test")]
-    public function test(): Response
+    #[Route("/blog/home", name: "blog_home")]
+    public function home(): Response
     {
         //$url=$this->generateUrl("blog");
         //return $this->redirect($url);
         //return $this->redirect($this->generateUrl("blog"));
-        return $this->redirectToRoute("blog_article_detail", ["id"=>10, "name"=>"Sasse"]);
+        return $this->render("blog/home.html.twig");
     }
 }
